@@ -1,0 +1,6 @@
+.env.example
+.gitignore
+FLOWS.md
+LICENSE.md
+README.md
+docker-compose.yml
