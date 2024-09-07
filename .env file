@@ -1,2 +1,9 @@
  .env file
 https://paywithpi.com/validation-key.txt
+
+
+# Add your API key here:
+PI_API_KEY=https://paywithpi.com/validation-key.txt
+
+# Add your session secret here:
+SESSION_SECRET=f7d8531b796b28a6223d7045dc9e437cc6f1a8b07932db982885dc293f6855d55c8cd09739ab0f2e24b74797ee5dbb5a999eba3e602b0d69304f1c3df0eb6ed0
