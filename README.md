@@ -133,7 +133,7 @@ CORS config: configured to respond to a frontend hosted on http://localhost:3314
 ```
 
 ---
-You've completed the backend setup, return to [`doc/development.md`](../doc/deployment.md) to finish setting up the Pay with Pi app to the [Pay with pi DeveloperGuide](https://paywithPi-apps.github.io/community-developer-guide/docs/gettingStarted/devPortal/).
+You've completed the backend setup, return to [`doc/development.md`](../doc/deployment.md) to finish setting up the Pay with Pi app to the [Pay with pi Developer Guide](https://paywithPi-apps.github.io/community-developer-guide/docs/gettingStarted/devPortal/).
 
 `FRONTEND_URL` specifies the URL of the frontend app, which by default is `http://localhost:3314`.
 Depending on sandbox settings you're using to preview Pay with pi app, you may need to change this value accordingly.
