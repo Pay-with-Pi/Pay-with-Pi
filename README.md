@@ -24,7 +24,7 @@ Install dependencies by running `yarn install`.
 
 ### 2. Set up environment variables
 
-The demo app's backend use several environment variables, from which most have default values. In order to specify
+The Pay with Pi app's backend use several environment variables, from which most have default values. In order to specify
 these, create `.env` file in the root backend directory.
 
 Create your `.env` file from the template:
