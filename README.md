@@ -5,7 +5,7 @@ upon app registration. For more guidelines on registering your app refe# Pay wit
 
 The only variable you need to provide is `Pay with Pi_API_KEY`, which is required to authorize payments. You receive it
 upon app registration. For more guidelines on registering your app refer to
-the [Pi Developer Guide](https://PaywithPi-apps.github.io/community-developer-guide/docs/gettingStarted/devPortal/).
+the [Pay with Pi Developer Guide](https://PaywithPi-apps.github.io/community-developer-guide/docs/gettingStarted/devPortal/).
 
 `FRONTEND_URL` specifies the URL of the frontend app, which by default is `http://localhost:3314`.
 Depending on sandbox settings you're using to preview Pay with Pi app, you may need to change this value accordingly.
@@ -92,14 +92,14 @@ Then, recreate the container using the `docker run` command above.
 **Options 2: directly install MongoDB on your machine:**
 
 Install MongoDB Community following the
-[official documentation](https://www.mongodb.com/docs/manual/administration/install-community/).
+[officialdocumentation](https://www.mongodb.com/docs/manual/administration/install-community/).
 
 Run the server and create a database and a user:
 
 Open a Mongo shell by running `mongosh`, then paste the following JS code into it:
 
 ```javascript
-var MONGODB_DATABASE_NAME = "Pay with Piapp-development"
+var MONGODB_DATABASE_NAME = "Pay with Pi app-development"
 var MONGODB_USERNAME = "Pay with pi App"
 var MONGODB_PASSWORD = "dev_password"
 
