@@ -5,7 +5,7 @@ upon app registration. For more guidelines on registering your app refe# Pay wit
 
 The only variable you need to provide is `Pay with Pi_API_KEY`, which is required to authorize payments. You receive it
 upon app registration. For more guidelines on registering your app refer to
-the [Pi Developer Guide](https://Paywithpi-apps.github.io/community-developer-guide/docs/gettingStarted/devPortal/).
+the [Pi Developer Guide](https://Pay with pi-apps.github.io/community-developer-guide/docs/gettingStarted/devPortal/).
 
 `FRONTEND_URL` specifies the URL of the frontend app, which by default is `http://localhost:3314`.
 Depending on sandbox settings you're using to preview Pay with Pi app, you may need to change this value accordingly.
@@ -45,7 +45,7 @@ Obtain the following values from the developer portal:
 
 **API key**: obtained by tapping the "Get API Key" button
 
-![](./img/pay with pi_key.png)
+![](./img/pay with Pi_key.png)
 
 Then, copy-paste those values in the following two keys of your .env file:
 
@@ -69,21 +69,21 @@ Start a MongoDB server using the following command:
 
 ```
 docker run --name Pay with Pi app-mongo -d \
-  -e MONGO_INITDB_ROOT_USERNAME=Pay with Piapp -e MONGO_INITDB_ROOT_PASSWORD=dev_password \
+  -e MONGO_INITDB_ROOT_USERNAME=Pay with Pi app -e MONGO_INITDB_ROOT_PASSWORD=dev_password \
   -p 27017:27017 mongo:5.0
 ```
 
 Down the road, you can use the following commands to stop and start your mongo container:
 
 ```
-docker stop Pay with pi app-mongo
-docker start Pay with pi app-mongo
+docker stop Pay with Pi app-mongo
+docker start Pay with Pi app-mongo
 ```
 
 To reinitialize everything (and **drop all the data**) you can run the following command:
 
 ```
-docker kill Pay with pi app-mongo; docker rm Pay with pi app-mongo
+docker kill Pay with Pi app-mongo; docker rm Pay with pi app-mongo
 ```
 
 Then, recreate the container using the `docker run` command above.
@@ -127,15 +127,13 @@ If everything is set up correctly you should see the following output in your te
 
 ```
 NODE_ENV: development
-Connected to MongoDB on:  mongodb://localhost:27017/Pay with Piapp-development
-App platform demo app - Backend listening on port 8000!
+Connected to MongoDB on:  mongodb://localhost:27017/Pay with Pi app-development
+App platform Pay with Pi app - Backend listening on port 8000!
 CORS config: configured to respond to a frontend hosted on http://localhost:3314
 ```
 
 ---
-You've completed the backend setup, return to [`doc/development.md`](../doc/deployment.md) to finish setting up the demo app
-r to
-the [Pay with pi Developer Guide](https://pay with Pi-apps.github.io/community-developer-guide/docs/gettingStarted/devPortal/).
+You've completed the backend setup, return to [`doc/development.md`](../doc/deployment.md) to finish setting up the Pay with Pi app to the [Pay with pi Developer Guide](https://pay with Pi-apps.github.io/community-developer-guide/docs/gettingStarted/devPortal/).
 
 `FRONTEND_URL` specifies the URL of the frontend app, which by default is `http://localhost:3314`.
 Depending on sandbox settings you're using to preview Pay with pi app, you may need to change this value accordingly.
@@ -146,7 +144,7 @@ The Pay with Pi app's backend uses a local MongoDB server to store user data and
 
 ### 1. Install dependencies:
 
-You will need a working NodeJS installation, and `yarn`. **The Pay with pi app frontend isn't meant to support npm**.
+You will need a working NodeJS installation, and `yarn`. **The Pay with Pi app frontend isn't meant to support npm**.
 In most cases, `yarn` will come along with your NodeJS installation.
 
 Install dependencies by running `yarn install`.
@@ -199,22 +197,22 @@ Additionally, you can specify MongoDB name env variable, which if not specified 
 Start a MongoDB server using the following command:
 
 ```
-docker run --name Pay with Piapp-mongo -d \
-  -e MONGO_INITDB_ROOT_USERNAME=demoapp -e MONGO_INITDB_ROOT_PASSWORD=dev_password \
+docker run --name Pay with Pi app-mongo -d \
+  -e MONGO_INITDB_ROOT_USERNAME=Pay with Pi app -e MONGO_INITDB_ROOT_PASSWORD=dev_password \
   -p 27017:27017 mongo:5.0
 ```
 
 Down the road, you can use the following commands to stop and start your mongo container:
 
 ```
-docker stop Pay with Piapp-mongo
-docker start Pay with Piapp-mongo
+docker stop Pay with Pi app-mongo
+docker start Pay with Pi app-mongo
 ```
 
 To reinitialize everything (and **drop all the data**) you can run the following command:
 
 ```
-docker kill Pay with Piapp-mongo; docker rm demoapp-mongo
+docker kill Pay with Pi app-mongo; docker rm demoapp-mongo
 ```
 
 Then, recreate the container using the `docker run` command above.
@@ -230,8 +228,8 @@ Run the server and create a database and a user:
 Open a Mongo shell by running `mongosh`, then paste the following JS code into it:
 
 ```javascript
-var MONGODB_DATABASE_NAME = "demoapp-development"
-var MONGODB_USERNAME = "Pay with Piapp"
+var MONGODB_DATABASE_NAME = "Pay with Pi app-development"
+var MONGODB_USERNAME = "Pay with Pi app"
 var MONGODB_PASSWORD = "dev_password"
 
 db.getSiblingDB("admin").createUser(
@@ -252,13 +250,13 @@ To preview the database, you can use Robo3T or MongoDB Compass.
 
 ### 3. Run the server
 
-Start the server with the following command (inside of the `backend` directory): `yarn start`.
+Start the server with the following command (inside of the`backend`directory):`yarn start`.
 
 If everything is set up correctly you should see the following output in your terminal:
 
 ```
 NODE_ENV: development
-Connected to MongoDB on:  mongodb://localhost:27017/demoapp-development
+Connected to MongoDB on:  mongodb://localhost:27017Pay with Pi app-development
 App platform demo app - Backend listening on port 8000!
 CORS config: configured to respond to a frontend hosted on http://localhost:3314
 ```
