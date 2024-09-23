@@ -60,8 +60,7 @@ SESSION_SECRET=
 
 ### 2. Set up MongoDB
 
-The default port for MongoDB is `27017`. If you have decided to change either default port or username and password,
-make sure to update environment variables in the backend `.env` file accordingly.
+The default port for MongoDB is `27017`. If you have decided to change either default port or username and password,make sure to update environment variables in the backend `.env` file accordingly.
 Additionally, you can specify MongoDB name env variable, which if not specified will be named `Pay with Pi-app` by default.
 
 **Option 1: using Docker:**
