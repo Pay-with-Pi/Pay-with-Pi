@@ -5,7 +5,7 @@ upon app registration. For more guidelines on registering your app refe# Pay wit
 
 The only variable you need to provide is `Pay with Pi_API_KEY`, which is required to authorize payments. You receive it
 upon app registration. For more guidelines on registering your app refer to
-the [Pi Developer Guide](https://Paywith pi-apps.github.io/community-developer-guide/docs/gettingStarted/devPortal/).
+the [Pi Developer Guide](https://PaywithPi-apps.github.io/community-developer-guide/docs/gettingStarted/devPortal/).
 
 `FRONTEND_URL` specifies the URL of the frontend app, which by default is `http://localhost:3314`.
 Depending on sandbox settings you're using to preview Pay with Pi app, you may need to change this value accordingly.
