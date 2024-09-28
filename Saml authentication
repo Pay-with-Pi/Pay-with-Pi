@@ -1,0 +1,18 @@
+saml:
+  idp:
+    entityId: "https://idp.paywithpi.com/metadata"
+    ssoUrl: "https://idp.paywithpi.com/sso"
+    certificate: "MIIC...AB"
+  sp:
+    entityId: "https://sp.paywithpi.com/metadata"
+    acsUrl: "https://sp.paywithpi.com/acs"
+    certificate: "MIIC...AB"
+saml:
+  idp:
+    entityId: "https://idp.paywithpi.com/metadata"
+    ssoUrl: "https://idp.paywithpi.com/sso"
+    certificate: "MIIC...AB"
+  sp:
+    entityId: "https://sp.paywithpi.com/metadata"
+    acsUrl: "https://sp.paywithpi.com/acs"
+    certificate: "MIIC...AB"
