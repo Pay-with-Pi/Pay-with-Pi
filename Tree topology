@@ -1,0 +1,55 @@
+from mininet.net import Mininet
+from mininet.node import Controller, RemoteController
+from mininet.cli import CLI
+from mininet.log import setLogLevel, info
+from mininet.topo import Topo
+
+class TreeTopo(Topo):
+    def build(self):
+        switches = [self.addSwitch('s%s' % i) for i in range(1, 4)]
+        hosts = [self.addHost('h%s' % i) for i in range(1, 5)]
+
+        self.addLink(hosts[0], switches[0])
+        self.addLink(hosts[1], switches[0])
+        self.addLink(switches[0], switches[1])
+        self.addLink(switches[0], switches[2])
+        self.addLink(switches[1], hosts[2])
+        self.addLink(switches[2], hosts[3])
+
+def run():
+    topo = TreeTopo()
+    net = Mininet(topo=topo, controller=RemoteController)
+    net.start()
+    CLI(net)
+    net.stop()
+
+if __name__ == '__main__':
+    setLogLevel('info')
+    run()
+from mininet.net import Mininet
+from mininet.node import Controller, OVSSwitch
+from mininet.log import setLogLevel, info
+from mininet.cli import CLI
+import time
+
+def automated_test():
+    net = Mininet(controller=Controller, switch=OVSSwitch)
+    c0 = net.addController('c0')
+    s1 = net.addSwitch('s1')
+    h1 = net.addHost('h1')
+    h2 = net.addHost('h2')
+
+    net.addLink(h1, s1)
+    net.addLink(h2, s1)
+    net.start()
+
+    h1.cmd('ping -c 4 %s' % h2.IP())
+    time.sleep(2)
+
+    net.stop()
+
+if __name__ == '__main__':
+    setLogLevel('info')
+    automated_test()
+
+net.addController('c0', controller=RemoteController, ip='127.0.0.1', port=6653)
