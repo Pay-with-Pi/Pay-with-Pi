@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay with Pi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Pay with Pi</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="hero">
+            <h2>Secure and Easy Payments with Pi</h2>
+            <p>Experience the future of payments today.</p>
+            <button onclick="getStarted()">Get Started</button>
+        </section>
+        <section id="features">
+            <h3>Features</h3>
+            <p>Discover the benefits of using Pi for your transactions.</p>
+            <!-- Features content -->
+        </section>
+        <section id="how-it-works">
+            <h3>How It Works</h3>
+            <p>Learn how to start using Pay with Pi.</p>
+            <!-- How It Works content -->
+        </section>
+        <section id="testimonials">
+            <h3>Testimonials</h3>
+            <p>Hear from our satisfied users.</p>
+            <!-- Testimonials content -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Pay with Pi</p>
+        <ul class="social-media">
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+    </footer>
+    <script>
+        function getStarted() {
+            alert("Getting Started with Pay with Pi!");
+        }
+    </script>
+</body>
+</html>
