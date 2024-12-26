@@ -1,0 +1,19 @@
+# Define the conversion rate
+PI_TO_USD_RATE = 314159
+
+def convert_pi_to_usd(pi_amount):
+    """
+    Convert Pi to USD based on the fixed exchange rate.
+    """
+    usd_value = pi_amount * PI_TO_USD_RATE
+    return usd_value
+
+def main():
+    # Example usage
+    pi_amount = 1.5  # Example amount in Pi
+    usd_value = convert_pi_to_usd(pi_amount)
+    print(f"{pi_amount} Pi is equal to ${usd_value}")
+
+if __name__ == "__main__":
+    main()
+1.5 Pi is equal to $471238.5
