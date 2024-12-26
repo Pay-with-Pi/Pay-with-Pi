@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yopac Orphanage Fund</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Yopac Orphanage Fund</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Programs</a></li>
+                <li><a href="#">Donate</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="hero">
+            <!-- Hero section content -->
+        </section>
+        <section id="about">
+            <!-- About Us content -->
+        </section>
+        <section id="programs">
+            <!-- Our Programs content -->
+        </section>
+        <section id="donate">
+            <!-- Donate content -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Yopac Orphanage Fund</p>
+        <ul class="social-media">
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+    </footer>
+</body>
+</html>
+
+pip install flask
+python app.py
