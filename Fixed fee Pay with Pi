@@ -1,0 +1,25 @@
+def calculate_fee(transaction_amount, fee_percentage):
+    # Calculate the fee
+    fee = transaction_amount * (fee_percentage / 100)
+    return fee
+
+def transfer_to_bank(fee, bank_account_number):
+    # Mock function to simulate bank transfer
+    # In a real-world scenario, this would involve API calls to the bank's system
+    print(f"Transferring {fee} to bank account {bank_account_number}")
+    # Simulate successful transfer
+    return True
+
+def process_transaction(transaction_amount, fee_percentage, bank_account_number):
+    fee = calculate_fee(transaction_amount, fee_percentage)
+    success = transfer_to_bank(fee, bank_account_number)
+    if success:
+        print(f"Contribution of {fee} to Yopac Orphanage Fund successful!")
+    else:
+        print("Transfer failed!")
+
+# Example usage
+transaction_amount = 100  # Example transaction amount
+fee_percentage = 5  # Example fee percentage
+bank_account_number = "0152799092500"  # Yopac Orphanage Fund account number
+process_transaction(transaction_amount, fee_percentage, bank_account_number)
