@@ -1,0 +1,37 @@
+import requests
+
+def calculate_fee(transaction_amount, fee_percentage):
+    # Calculate the fee
+    fee = transaction_amount * (fee_percentage / 100)
+    return fee
+
+def transfer_to_bank(fee, bank_account_number, bank_api_url, api_key):
+    # Function to integrate with bank's API
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json"
+    }
+    payload = {
+        "amount": fee,
+        "account_number": bank_account_number,
+        "currency": "TZS"
+    }
+    response = requests.post(bank_api_url, json=payload, headers=headers)
+    return response.ok
+
+def process_transaction(transaction_amount, fee_percentage, bank_account_number, bank_api_url, api_key):
+    fee = calculate_fee(transaction_amount, fee_percentage)
+    success = transfer_to_bank(fee, bank_account_number, bank_api_url, api_key)
+    if success:
+        print(f"Contribution of {fee} to fund successful!")
+    else:
+        print("Transfer failed!")
+
+# Example usage
+transaction_amount = 1000  # Example transaction amount
+fee_percentage = 1.5  # Example fee percentage
+bank_account_number = "0152799092500"  # Yopac Orphanage Fund account number
+bank_api_url = "https://api.bot-tz.org/transfer"  # Hypothetical Bank of Tanzania API endpoint
+api_key = "your_api_key_here"  # API key for authentication
+
+process_transaction(transaction_amount, fee_percentage, bank_account_number, bank_api_url, api_key)
