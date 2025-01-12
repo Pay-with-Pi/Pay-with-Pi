@@ -1,0 +1,56 @@
+def mainnet_swap(user):
+    initialize_system()
+
+    if authenticate_user(user):
+        present_swap_option()
+
+        if user_initiates_swap():
+            if check_balance(user):
+                deduct_amount(user)
+                transaction_id = generate_transaction_id()
+
+                if execute_mainnet_transaction(transaction_id, user):
+                    update_account(user)
+                    log_transaction(transaction_id, user)
+                    display_success_message()
+                else:
+                    rollback_changes(user)
+                    display_error_message()
+            else:
+                display_low_balance_message()
+        else:
+            display_no_swap_initiated()
+    else:
+        display_authentication_error()
+
+    keep_swap_active_until("03/14/2025")
+def mainnet_swap(user):
+    try:
+        initialize_system()
+        
+        if authenticate_user(user):
+            present_swap_option()
+
+            if user_initiates_swap():
+                if check_balance(user):
+                    deduct_amount(user)
+                    transaction_id = generate_transaction_id()
+
+                    if execute_mainnet_transaction(transaction_id, user):
+                        update_account(user)
+                        log_transaction(transaction_id, user)
+                        display_success_message()
+                    else:
+                        rollback_changes(user)
+                        display_error_message()
+                else:
+                    display_low_balance_message()
+            else:
+                display_no_swap_initiated_message()
+        else:
+            display_authentication_error_message()
+
+        keep_swap_active_until("03/14/2025")
+    except Exception as e:
+        handle_unexpected_errors(e)
+        display_error_message()
