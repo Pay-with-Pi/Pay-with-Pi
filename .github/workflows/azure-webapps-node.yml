@@ -48,6 +48,11 @@ jobs:
         npm run build --if-present
         npm run test --if-present
 
+    - name: Install Apache2, MySQL, and PHP
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y apache2 mysql-server php libapache2-mod-php php-mysql
+
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
       with:
