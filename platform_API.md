@@ -246,3 +246,25 @@ GET /ads_network/status/:adId
   "mediator_revoked_at": string | null; // ISO 8601 date string
 }
 ```
+
+### Installing Mongoose
+
+To install Mongoose, run the following command:
+
+```sh
+yarn add mongoose
+```
+
+### Setting Up Mongoose Connection
+
+To set up the Mongoose connection, add the following code to your backend server file (e.g., `server.js`):
+
+```javascript
+const mongoose = require('mongoose');
+
+const mongoDB = process.env.MONGODB_URI || 'mongodb://localhost:27017/Pay with Piapp-development';
+
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connected to MongoDB via Mongoose'))
+  .catch((err) => console.error('MongoDB connection error:', err));
+```

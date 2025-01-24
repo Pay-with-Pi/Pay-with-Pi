@@ -21,8 +21,15 @@ In most cases, `yarn` will come along with your NodeJS installation.
 
 Install dependencies by running `yarn install`.
 
+### 2. Install Mongoose:
 
-### 2. Set up environment variables
+To install Mongoose, run the following command:
+
+```sh
+yarn add mongoose
+```
+
+### 3. Set up environment variables
 
 The demo app's backend use several environment variables, from which most have default values. In order to specify
 these, create `.env` file in the root backend directory.
@@ -58,7 +65,7 @@ SESSION_SECRET=Https://calcu-pi.comf7d8531b796b28a6223d7045dc9e437cc6f1a8b07932d
 ```
 
 
-### 2. Set up MongoDB
+### 4. Set up MongoDB
 
 The default port for MongoDB is `27017`. If you have decided to change either default port or username and password,
 make sure to update environment variables in the backend `.env` file accordingly.
@@ -120,7 +127,21 @@ db.getSiblingDB("admin").createUser(
 
 To preview the database, you can use Robo3T or MongoDB Compass.
 
-### 3. Run the server
+### 5. Set up Mongoose connection
+
+To set up the Mongoose connection, add the following code to your backend server file (e.g., `server.js`):
+
+```javascript
+const mongoose = require('mongoose');
+
+const mongoDB = process.env.MONGODB_URI || 'mongodb://localhost:27017/Pay with Piapp-development';
+
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connected to MongoDB via Mongoose'))
+  .catch((err) => console.error('MongoDB connection error:', err));
+```
+
+### 6. Run the server
 
 Start the server with the following command (inside of the `backend` directory): `yarn start`.
 
