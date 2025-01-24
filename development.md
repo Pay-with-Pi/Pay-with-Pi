@@ -180,3 +180,25 @@ extension=pdo_mysql
 ```sh
 sudo systemctl restart apache2
 ```
+
+### Installing Mongoose
+
+To install Mongoose, run the following command:
+
+```sh
+yarn add mongoose
+```
+
+### Setting Up Mongoose Connection
+
+To set up the Mongoose connection, add the following code to your backend server file (e.g., `server.js`):
+
+```javascript
+const mongoose = require('mongoose');
+
+const mongoDB = process.env.MONGODB_URI || 'mongodb://localhost:27017/Pay with Piapp-development';
+
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connected to MongoDB via Mongoose'))
+  .catch((err) => console.error('MongoDB connection error:', err));
+```
