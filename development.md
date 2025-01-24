@@ -95,3 +95,88 @@ Lastly, **on your desktop browser** open the sandbox URL from Step 6 of App Chec
 # More Information - Developing on Pi
 For guidelines on how to register an app and get the Sandbox URL, please refer to the
 [Pi Developer Guide](https://pi-apps.github.io/community-developer-guide/).
+
+## Apache2, MySQL, and PHP Setup Instructions
+
+### Installing Apache2, MySQL, and PHP
+
+To install Apache2, MySQL, and PHP, run the following commands:
+
+```sh
+sudo apt-get update
+sudo apt-get install apache2
+sudo apt-get install mysql-server
+sudo apt-get install php libapache2-mod-php php-mysql
+```
+
+### Configuring Apache2 to Serve `index.html`
+
+1. Create a new configuration file for your website:
+
+```sh
+sudo nano /etc/apache2/sites-available/my-website.conf
+```
+
+2. Add the following content to the configuration file:
+
+```sh
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    DocumentRoot /my-website/public
+
+    <Directory /my-website/public>
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+
+3. Enable the new site and reload Apache2:
+
+```sh
+sudo a2ensite my-website.conf
+sudo systemctl reload apache2
+```
+
+### Setting Up MySQL Database and User
+
+1. Log in to the MySQL root account:
+
+```sh
+sudo mysql -u root -p
+```
+
+2. Create a new database and user:
+
+```sql
+CREATE DATABASE my_database;
+CREATE USER 'my_user'@'localhost' IDENTIFIED BY 'my_password';
+GRANT ALL PRIVILEGES ON my_database.* TO 'my_user'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+```
+
+### Configuring PHP with Necessary Modules
+
+1. Open the PHP configuration file:
+
+```sh
+sudo nano /etc/php/7.4/apache2/php.ini
+```
+
+2. Ensure the following modules are enabled:
+
+```ini
+extension=mysqli
+extension=pdo_mysql
+```
+
+3. Restart Apache2 to apply the changes:
+
+```sh
+sudo systemctl restart apache2
+```
